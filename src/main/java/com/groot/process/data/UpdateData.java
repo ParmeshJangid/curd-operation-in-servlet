@@ -33,7 +33,7 @@ public class UpdateData extends HttpServlet {
 		// TODO Auto-generated method stub
 		Connection con=null;
 		try {
-			con = FactoryOfConnection.getConnection();
+			con = DBOperation.getConnection();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -42,7 +42,7 @@ public class UpdateData extends HttpServlet {
 		response.setContentType("text/html");
 		int id=Integer.parseInt(request.getParameter("id"));
 		try {
-			PreparedStatement ps= con.prepareStatement("select * from firstservlet where SN=?");
+			PreparedStatement ps= con.prepareStatement("select * from firstservlet where id=?");
 			ps.setInt(1, id);
 			ResultSet rs=ps.executeQuery();
 			if(rs.next()) {

@@ -64,7 +64,8 @@
 
     <div class="container">
         <h2>User Registration</h2>
-        <form action="./send" method="get">
+        <form action="./ActionServlet" method="get">
+        	<input type="hidden" name="action" value="add"/>
             <input type="text" placeholder="Name" name="name" required>
             <input type="text" placeholder="Email" name="email" required>
             <input type="password" placeholder="Password" name="password" required>

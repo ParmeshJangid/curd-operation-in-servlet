@@ -35,7 +35,7 @@ public class DeleteData extends HttpServlet {
 		// TODO Auto-generated method stub
 		Connection con=null;
 		try {
-			con = FactoryOfConnection.getConnection();
+			con = DBOperation.getConnection();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -43,7 +43,7 @@ public class DeleteData extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		response.setContentType("text/html");
 		try {
-			PreparedStatement ps = con.prepareStatement("delete from firstservlet where SN=?");
+			PreparedStatement ps = con.prepareStatement("delete from fIrSTSERVLET where SN=?");
 			ps.setInt(1,Integer.parseInt(request.getParameter("id")));
 			int i=ps.executeUpdate();
 			 
@@ -51,8 +51,8 @@ public class DeleteData extends HttpServlet {
 			 
 			if(i>0) {
 				out.println();
-				out.print("hello hjvcbdhjv");
-//				response.sendRedirect("./view");
+//				out.print("hello hjvcbdhjv");
+				response.sendRedirect("./view");
 			}
 		}catch (Exception e) {
 			// TODO: handle exceptione

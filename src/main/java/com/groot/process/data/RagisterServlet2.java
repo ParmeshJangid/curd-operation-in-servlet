@@ -34,7 +34,7 @@ public class RagisterServlet2 extends HttpServlet {
 			e.printStackTrace();
 		}
 		try {
-			Connection conn = FactoryOfConnection.getConnection();
+			Connection conn = DBOperation.getConnection();
 			PreparedStatement ps = conn.prepareStatement(INSERT_QUERY);
 			ps.setString(1, name);
 			ps.setString(2, phonenumber);

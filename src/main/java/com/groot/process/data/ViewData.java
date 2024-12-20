@@ -60,7 +60,7 @@ public class ViewData extends HttpServlet {
             // Database operations
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection con = FactoryOfConnection.getConnection();
+                Connection con = DBOperation.getConnection();
                 if (con == null) {
                     out.print("Connection is Null...!");
                 }
